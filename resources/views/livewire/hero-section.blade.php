@@ -1,4 +1,4 @@
-<div class="py-12 bg-gray-200">
+<div class="py-12 bg-white">
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
             <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10">
