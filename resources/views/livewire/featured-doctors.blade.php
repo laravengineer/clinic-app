@@ -1,4 +1,4 @@
-<div class="py-12 bg-gray-200">
+<div class="py-12 bg-white">
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
             <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
@@ -26,7 +26,7 @@
                         <p class="mt-3 text-gray-500 dark:text-neutral-500">
                             I am an ambitious workaholic, but apart from that, pretty simple person.
                         </p>
-                        <div class="flex gap-5 mt-5">
+                        <div class="flex justify-between mt-5">
                             <div class="mt-3 space-x-1">
                                 <a class="inline-flex items-center justify-center text-sm font-semibold text-gray-500 border border-gray-200 rounded-lg size-8 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:border-neutral-700 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700" href="#">
                                     <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -44,9 +44,16 @@
                                     </svg>
                                 </a>
                             </div>
-                            <button type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-lg gap-x-2 hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
-                                {{ __('Book Appointment') }}
-                            </button>
+                            @if (auth()->user())
+                                <a href="" class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-lg gap-x-2 hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                                    {{ __('Book Appointment') }}
+                                </a>
+                            @else
+                                <a href="{{ route('login') }}" wire:navigate class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-lg gap-x-2 hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                                    {{ __('Book Appointment') }}
+                                </a>
+                            @endif
+                            
                         </div>
                     </div>
               
