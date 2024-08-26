@@ -18,8 +18,11 @@ Route::get('/doctor/dashboard', [DoctorController::class,'loadDoctorDashboard'])
     ->middleware('doctor')
     ->name('doctor-dashboard');
 
-Route::get('/admin/dashboard', [AdminController::class,'loadAdminDashboard'])
-    ->middleware('admin')
-    ->name('admin-dashboard');
+Route::group(['prefix'=> 'admin', 'middleware' => 'admin'], function () {
+    Route::get('/dashboard',    [AdminController::class,'loadAdminDashboard'    ])->name('admin-dashboard');
+    Route::get('/doctors',      [AdminController::class,'loadDoctorListing'     ])->name('admin-doctors');
+    Route::get('/specialities', [AdminController::class,'loadSpecialityListing' ])->name('admin-specialities');
+    Route::get('/form/doctor',  [AdminController::class,'loadDoctorForm'        ])->name('admin-form-doctor');
+});
 
 require __DIR__.'/auth.php';
