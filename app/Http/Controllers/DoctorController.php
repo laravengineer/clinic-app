@@ -8,6 +8,6 @@ class DoctorController extends Controller
 {
     public function loadDoctorDashboard()
     {
-        return view("doctor.dashboard");
+        return view('doctor.dashboard');
     }
 }
