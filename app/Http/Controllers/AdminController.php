@@ -25,4 +25,9 @@ class AdminController extends Controller
     {
         return view('admin.speciality-listing');
     }
+
+    public function loadSpecialityForm()
+    {
+        return view('admin.speciality-form');
+    }
 }
