@@ -1,7 +1,4 @@
-<div class="py-12 bg-white">
-    <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
-                <!-- Table Section -->
+
 <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
     <!-- Card -->
     <div class="flex flex-col">
@@ -9,6 +6,11 @@
         <div class="p-1.5 min-w-full inline-block align-middle">
           <div class="overflow-hidden bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700">
             <!-- Header -->
+            @if (session()->has('message'))
+            <div class="p-4 mt-2 text-sm text-white bg-black rounded-lg" role="alert" tabindex="-1" aria-labelledby="hs-solid-color-success-label">
+                <span id="hs-solid-color-success-label" class="font-bold">Success</span>{{ session('message') }}
+            </div>
+            @endif
             <div class="grid gap-3 px-6 py-4 border-b border-gray-200 md:flex md:justify-between md:items-center dark:border-neutral-700">
               <div>
                 <h2 class="text-xl font-semibold text-gray-800 dark:text-neutral-200">
@@ -630,6 +632,3 @@
     <!-- End Card -->
   </div>
   <!-- End Table Section -->
-        </div>
-    </div>
-</div>
